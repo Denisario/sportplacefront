@@ -18,8 +18,6 @@ export class EventsComponent implements OnInit {
   getAllEvents(): void{
     this.eventService.getAllEvents().subscribe(events => {
       this.events = events;
-      console.log(this.events);
     });
   }
-
 }
