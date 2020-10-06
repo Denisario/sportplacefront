@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <form (ngSubmit)="addPlace()">
+        <div class="form-group">
+          <label for="name">Place name</label>
+          <input [(ngModel)]="place.name" name="name" type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input [(ngModel)]="place.country" name="country" type="text" class="form-control" id="country">
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input [(ngModel)]="place.city" name="city" type="text" class="form-control" id="city">
+        </div>
+        <div class="form-group">
+          <label for="street">Street</label>
+          <input [(ngModel)]="place.street" name="street" type="text" class="form-control" id="street">
+        </div>
+        <div class="form-group">
+          <label for="number">Place number</label>
+          <input [(ngModel)]="place.number" name="number" type="text" class="form-control" id="number">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Add place</button>
+      </form>
+    </div>
+  </div>
+</div>

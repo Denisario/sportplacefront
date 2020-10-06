@@ -12,14 +12,17 @@ export class UserService {
 
   login(username: string, password: string): Observable<any>{
 
-    return this.http.post('http://localhost:8080/rest/api/v1/login',
-        {username, password}).pipe(map(() => {
-      sessionStorage.setItem('username', username);
+    return this.http
+      .post('http://localhost:8080/rest/api/v1/login', {username, password})
+      .pipe(map(() => {
+          sessionStorage.setItem('username', username);
         }));
   }
 
   register(username: string, password: string, repeatPassword: string): Observable<any>{
-    return this.http.post('http://localhost:8080/rest/api/v1/register', {username, password, repeatPassword}).pipe();
+    return this.http
+      .post('http://localhost:8080/rest/api/v1/register', {username, password, repeatPassword})
+      .pipe();
   }
 
   logout(): void{

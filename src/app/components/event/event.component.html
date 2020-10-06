@@ -3,8 +3,8 @@
     <div class="col-12" *ngIf="event">
       <h3>{{event.name}}</h3>
       <br/>
-      <p>Start time: {{event.startDate}}</p>
-      <p>Finish time: {{event.finishDate}}</p>
+      <p>Start time: {{event.startDate | date}}</p>
+      <p>Finish time: {{event.finishDate | date}}</p>
       <p>Place: {{event.place.name}}</p>
       <h4>Address</h4>
       <p>Country: {{event.place.country}}</p>

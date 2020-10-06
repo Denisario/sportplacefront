@@ -10,10 +10,18 @@ export class EventService {
   constructor(private httpClient: HttpClient) { }
 
   getAllEvents(): Observable<Event[]>{
-    return this.httpClient.get<Event[]>('http://localhost:8080/rest/api/v1/events');
+    return this.httpClient
+      .get<Event[]>('http://localhost:8080/rest/api/v1/events');
   }
 
   getEventById(id: number): Observable<Event>{
-    return this.httpClient.get<Event>(`http://localhost:8080/rest/api/v1/events/${id}`);
+    return this.httpClient
+      .get<Event>(`http://localhost:8080/rest/api/v1/events/${id}`);
+  }
+
+  saveEvent(name: string, startDate: Date, finishDate: Date, placeName: string): Observable<any>{
+    return this.httpClient
+      .post('http://localhost:8080/rest/api/v1/events', {name, startDate, finishDate, placeName})
+      .pipe();
   }
 }

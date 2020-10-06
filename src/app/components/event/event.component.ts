@@ -14,6 +14,7 @@ export class EventComponent implements OnInit {
   id: number;
   event: Event;
   comments: Comment[];
+
   constructor(private eventService: EventService,
               private commentService: CommentService,
               private route: ActivatedRoute) {
@@ -26,12 +27,16 @@ export class EventComponent implements OnInit {
   }
 
   getEventById(): void{
-    this.eventService.getEventById(this.id).subscribe((event) => this.event = event);
+    this.eventService
+      .getEventById(this.id)
+      .subscribe((event) => this.event = event);
   }
 
   getCommentsByEventId(): void{
-    this.commentService.getAllCommentByEventId(this.id).subscribe((comments) => {
-      this.comments = comments;
+    this.commentService
+      .getAllCommentByEventId(this.id)
+      .subscribe((comments) => {
+        this.comments = comments;
     });
   }
 }

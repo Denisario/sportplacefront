@@ -12,6 +12,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { EventsComponent } from './components/events/events.component';
 import { EventComponent } from './components/event/event.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AddEventComponent } from './components/add-event/add-event.component';
+import { AddPlaceComponent } from './components/add-place/add-place.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { LogoutComponent } from './components/logout/logout.component';
     RegisterComponent,
     EventsComponent,
     EventComponent,
-    LogoutComponent
+    LogoutComponent,
+    AdminComponent,
+    AddEventComponent,
+    AddPlaceComponent
   ],
   imports: [
     BrowserModule,

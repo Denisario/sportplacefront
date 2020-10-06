@@ -3,7 +3,7 @@
     <div class="col-8" *ngFor="let event of events">
       <div>
         <a routerLink="/events/{{event.id}}">{{event.name}}</a>
-        <div>{{event.startDate}} - {{event.finishDate}}</div>
+        <div>{{event.startDate | date}} - {{event.finishDate | date}}</div>
       </div>
     </div>
   </div>

@@ -11,6 +11,7 @@ export class CommentService {
   constructor(private httpClient: HttpClient) { }
 
   getAllCommentByEventId(id: number): Observable<Comment[]>{
-    return this.httpClient.get<Comment[]>(`http://localhost:8080/rest/api/v1/comments/${id}`);
+    return this.httpClient
+      .get<Comment[]>(`http://localhost:8080/rest/api/v1/comments/${id}`);
   }
 }
