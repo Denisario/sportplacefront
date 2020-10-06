@@ -15,14 +15,14 @@
       </ul>
 
       <ul class="navbar-nav navbar-collapse justify-content-end">
-        <li class="nav-item justify-content-end">
-          <a class="nav-link text-light" routerLink="/login" *ngIf="isAuth()">Login</a>
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="/login" *ngIf="!isAuth()">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" routerLink="/register" >Register</a>
+          <a class="nav-link text-light" routerLink="/register" *ngIf="!isAuth()">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" routerLink="/logout" >Logout</a>
+          <a class="nav-link text-light" routerLink="/logout" *ngIf="isAuth()">Logout</a>
         </li>
       </ul>
     </div>
