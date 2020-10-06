@@ -1,4 +1,5 @@
 import {Place} from './Place';
+import {Comment} from './Comment';
 
 export class Event{
   id: number;
@@ -6,4 +7,5 @@ export class Event{
   startDate: Date;
   finishDate: Date;
   place: Place;
+  comments: Comment[];
 }

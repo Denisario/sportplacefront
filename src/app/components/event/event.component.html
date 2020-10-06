@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
+    <div class="col-12" *ngIf="event">
       <h3>{{event.name}}</h3>
       <br/>
       <p>Start time: {{event.startDate}}</p>
@@ -10,6 +10,14 @@
       <p>Country: {{event.place.country}}</p>
       <p>City: {{event.place.city}}</p>
       <p>Address: {{event.place.street}} str - {{event.place.number}}</p>
+      <h4>Comments</h4>
+      <div *ngFor="let comment of comments">
+        <div>
+          <h6>{{comment.user.username}}</h6>
+          <p>Rating: {{comment.rating}}</p>
+          <p>{{comment.text}}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
