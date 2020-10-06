@@ -5,6 +5,7 @@ import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/register/register.component';
 import {EventsComponent} from './components/events/events.component';
 import {EventComponent} from './components/event/event.component';
+import {LogoutComponent} from './components/logout/logout.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'events', component: EventsComponent},
   {path: 'events/:id', component: EventComponent},
+  {path: 'logout', component: LogoutComponent},
 ];
 
 @NgModule({

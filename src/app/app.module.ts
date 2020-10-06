@@ -11,6 +11,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { EventsComponent } from './components/events/events.component';
 import { EventComponent } from './components/event/event.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EventComponent } from './components/event/event.component';
     LoginComponent,
     RegisterComponent,
     EventsComponent,
-    EventComponent
+    EventComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
