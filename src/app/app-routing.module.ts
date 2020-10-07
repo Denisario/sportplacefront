@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'logout', component: LogoutComponent},
   {path: 'addEvent', component: AddEventComponent},
   {path: 'addPlace', component: AddPlaceComponent},
-  {path: 'admin', component: AdminComponent},
+  {path: 'admin', component: AdminComponent}
 ];
 
 @NgModule({

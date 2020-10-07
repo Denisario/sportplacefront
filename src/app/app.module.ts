@@ -15,6 +15,8 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { AddPlaceComponent } from './components/add-place/add-place.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -30,12 +32,14 @@ import { AddPlaceComponent } from './components/add-place/add-place.component';
     AddEventComponent,
     AddPlaceComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatTabsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -14,6 +14,8 @@ export class EventComponent implements OnInit {
   id: number;
   event: Event;
   comments: Comment[];
+  files: File[] = [];
+  comment = {rating: 1, text: ''};
 
   constructor(private eventService: EventService,
               private commentService: CommentService,
@@ -38,5 +40,17 @@ export class EventComponent implements OnInit {
       .subscribe((comments) => {
         this.comments = comments;
     });
+  }
+
+  onFileChanged(event) {
+    for (const x of event.target.files){
+      this.files.push(x);
+    }
+  }
+
+  saveComment(): void{
+    this.commentService
+      .addComment(this.comment.rating, this.comment.text, this.files, this.id)
+      .subscribe();
   }
 }
