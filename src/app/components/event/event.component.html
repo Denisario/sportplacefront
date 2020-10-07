@@ -21,6 +21,9 @@
                   <h6>{{comment.user.username}}</h6>
                   <p>Rating: {{comment.rating}}</p>
                   <p>{{comment.text}}</p>
+                  <div *ngFor="let x of comment.file">
+                      <img src="./assets/img/{{x.filename}}" alt="" height="100" width="100">
+                  </div>
                 </div>
               </div>
             </div>
