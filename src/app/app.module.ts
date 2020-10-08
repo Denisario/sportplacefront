@@ -17,6 +17,8 @@ import { AddEventComponent } from './components/add-event/add-event.component';
 import { AddPlaceComponent } from './components/add-place/add-place.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
+import {JwPaginationModule} from 'jw-angular-pagination';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -32,14 +34,16 @@ import {MatTabsModule} from '@angular/material/tabs';
     AddEventComponent,
     AddPlaceComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatTabsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTabsModule,
+    JwPaginationModule,
+    MatPaginatorModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

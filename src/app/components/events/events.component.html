@@ -6,5 +6,11 @@
         <div>{{event.startDate | date}} - {{event.finishDate | date}}</div>
       </div>
     </div>
+    <br/>
+    <mat-paginator [length]="eventsSize"
+                   [pageSize]="3"
+                   [pageSizeOptions]="[3, 5]"
+                    (page)="onChangePage($event)">
+    </mat-paginator>
   </div>
 </div>
