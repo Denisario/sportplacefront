@@ -6,22 +6,26 @@ import {Event} from '../models/Event';
   providedIn: 'root'
 })
 export class EventService {
-
   constructor(private httpClient: HttpClient) { }
 
   getAllEvents(page: number, eventsInPage: number): Observable<Event[]>{
     return this.httpClient
-      .get<Event[]>(`http://localhost:8080/rest/api/v1/event?page=${page}&&size=${eventsInPage}`);
+      .get<Event[]>(`http://localhost:8080/rest/api/v1/events?page=${page}&&size=${eventsInPage}`);
   }
 
   getEventSize(): Observable<number>{
     return this.httpClient
-      .get<number>(`http://localhost:8080/rest/api/v1/events`);
+      .get<number>(`http://localhost:8080/rest/api/v1/events/length`);
   }
 
   getEventById(id: number): Observable<Event>{
     return this.httpClient
       .get<Event>(`http://localhost:8080/rest/api/v1/events/${id}`);
+  }
+
+  getEventsByInputString(input: string, page: number, eventsInPage: number): Observable<Event[]>{
+    return this.httpClient
+      .get<Event[]>(`http://localhost:8080/rest/api/v1/events/input?input=${input}&&page=${page}&&size=${eventsInPage}`);
   }
 
   saveEvent(name: string, startDate: Date, finishDate: Date, placeName: string): Observable<any>{

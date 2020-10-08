@@ -9,6 +9,7 @@ import {PageEvent} from '@angular/material/paginator';
   styleUrls: ['./events.component.sass']
 })
 export class EventsComponent implements OnInit {
+  eventName: string;
   events: Event[];
   page = 0;
   eventsInPage = 3;
@@ -37,5 +38,16 @@ export class EventsComponent implements OnInit {
 
   getEventsSize(): void{
     this.eventService.getEventSize().subscribe(size => this.eventsSize = size);
+  }
+
+  getEvents(): void {
+    if (this.eventName === '') {
+      this.ngOnInit();
+      return;
+    }
+    this.eventService.getEventsByInputString(this.eventName, this.page, this.eventsInPage).subscribe(events => {
+      this.events = events;
+      this.eventsSize = this.events.length;
+    });
   }
 }

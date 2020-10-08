@@ -1,4 +1,5 @@
 <div class="container">
+  <input [(ngModel)]="eventName" type="text" placeholder="Find event" (input)="getEvents()">
   <div class="row">
     <div class="col-8" *ngFor="let event of events">
       <div>

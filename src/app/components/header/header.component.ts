@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +6,7 @@ import {UserService} from '../../services/user.service';
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(public userService: UserService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -16,5 +14,4 @@ export class HeaderComponent implements OnInit {
   isAuth(): boolean{
     return !(sessionStorage.getItem('username') === null);
   }
-
 }
