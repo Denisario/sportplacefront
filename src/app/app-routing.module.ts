@@ -9,6 +9,7 @@ import {LogoutComponent} from './components/logout/logout.component';
 import {AddEventComponent} from './components/add-event/add-event.component';
 import {AddPlaceComponent} from './components/add-place/add-place.component';
 import {AdminComponent} from './components/admin/admin.component';
+import {FindComponent} from './components/find/find.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'logout', component: LogoutComponent},
   {path: 'addEvent', component: AddEventComponent},
   {path: 'addPlace', component: AddPlaceComponent},
-  {path: 'admin', component: AdminComponent}
+  {path: 'admin', component: AdminComponent},
+  {path: 'find', component: FindComponent}
 ];
 
 @NgModule({

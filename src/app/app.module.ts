@@ -19,6 +19,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import {JwPaginationModule} from 'jw-angular-pagination';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { FindComponent } from './components/find/find.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     LogoutComponent,
     AdminComponent,
     AddEventComponent,
-    AddPlaceComponent
+    AddPlaceComponent,
+    FindComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     BrowserAnimationsModule,
     MatTabsModule,
     JwPaginationModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSidenavModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

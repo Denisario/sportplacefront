@@ -20,14 +20,15 @@ export class EventsComponent implements OnInit {
   ngOnInit(): void {
     this.getAllEvents();
     this.getEventsSize();
+    this.eventService
+      .getEvents()
+      .subscribe( events => this.events = events);
   }
 
   getAllEvents(): void{
     this.eventService
       .getAllEvents(this.page, this.eventsInPage)
-      .subscribe(events => {
-        this.events = events;
-    });
+      .subscribe(events => this.events = events);
   }
 
   onChangePage(event: PageEvent) {
@@ -37,7 +38,9 @@ export class EventsComponent implements OnInit {
   }
 
   getEventsSize(): void{
-    this.eventService.getEventSize().subscribe(size => this.eventsSize = size);
+    this.eventService
+      .getEventSize()
+      .subscribe(size => this.eventsSize = size);
   }
 
   getEvents(): void {
@@ -45,9 +48,8 @@ export class EventsComponent implements OnInit {
       this.ngOnInit();
       return;
     }
-    this.eventService.getEventsByInputString(this.eventName, this.page, this.eventsInPage).subscribe(events => {
-      this.events = events;
-      this.eventsSize = this.events.length;
-    });
+    this.eventService
+      .getEventsByInputString(this.eventName, this.page, this.eventsInPage)
+      .subscribe(events => this.events = events);
   }
 }

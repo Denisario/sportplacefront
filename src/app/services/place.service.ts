@@ -13,9 +13,21 @@ export class PlaceService {
       .get<string[]>('http://localhost:8080/rest/api/v1/places/names');
   }
 
-  savePlace(name: string, country: string, city: string, street: string, number: string): Observable<any>{
+  savePlace(name: string, country: string, city: string, street: string, placeNum: string): Observable<any>{
     return this.httpClient
-      .post('http://localhost:8080/rest/api/v1/places', {name, country, city, street, number})
+      .post('http://localhost:8080/rest/api/v1/places', {name, country, city, street, placeNum})
+      .pipe();
+  }
+
+  getAllCountries(): Observable<string[]>{
+    return this.httpClient
+      .get<string[]>('http://localhost:8080/rest/api/v1/places/countries')
+      .pipe();
+  }
+
+  getAllPlacenamesByCountryName(countryName: string): Observable<string[]>{
+    return this.httpClient
+      .get<string[]>(`http://localhost:8080/rest/api/v1/places/placeNames?countryName=${countryName}`)
       .pipe();
   }
 }
