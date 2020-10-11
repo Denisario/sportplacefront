@@ -23,6 +23,7 @@ import { FindComponent } from './components/find/find.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import { PlacesListComponent } from './components/places-list/places-list.component';
+import { EventListComponent } from './components/event-list/event-list.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PlacesListComponent } from './components/places-list/places-list.compon
     AddEventComponent,
     AddPlaceComponent,
     FindComponent,
-    PlacesListComponent
+    PlacesListComponent,
+    EventListComponent
   ],
   imports: [
     BrowserModule,

@@ -62,4 +62,14 @@ export class EventService {
   getEvents(): Observable<Event[]>{
     return this.events;
   }
+
+  deleteEvent(id: number): Observable<any>{
+    return this.httpClient
+      .delete(`http://localhost:8080/rest/api/v1/events/${id}`);
+  }
+
+  updatePlace(event: object, id: number): Observable<any>{
+    return this.httpClient
+      .put(`http://localhost:8080/rest/api/v1/events/${id}`, event);
+  }
 }

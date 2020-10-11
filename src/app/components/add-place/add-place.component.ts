@@ -18,7 +18,9 @@ export class AddPlaceComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
     if (this.id !== undefined){
-      this.placeService.getPlaceById(this.id).subscribe(place => this.place = place);
+      this.placeService
+        .getPlaceById(this.id)
+        .subscribe(place => this.place = place);
     }
   }
 

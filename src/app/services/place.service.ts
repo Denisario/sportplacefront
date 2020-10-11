@@ -14,9 +14,9 @@ export class PlaceService {
       .get<string[]>('http://localhost:8080/rest/api/v1/places/names');
   }
 
-  savePlace(name: string, country: string, city: string, street: string, placeNum: number): Observable<any>{
+  savePlace(name: string, country: string, city: string, street: string, placeNumber: number): Observable<any>{
     return this.httpClient
-      .post('http://localhost:8080/rest/api/v1/places', {name, country, city, street, placeNum})
+      .post('http://localhost:8080/rest/api/v1/places', {name, country, city, street, placeNumber})
       .pipe();
   }
 
