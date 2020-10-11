@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PlaceService} from '../../services/place.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Place} from '../../models/Place';
 
 @Component({
   selector: 'app-add-place',
@@ -8,21 +9,35 @@ import {Router} from '@angular/router';
   styleUrls: ['./add-place.component.sass']
 })
 export class AddPlaceComponent implements OnInit {
-  place = {name: '', country: '', city: '', street: '', number: ''};
-
+  place: Place = new Place();
+  id: number;
   constructor(private placeService: PlaceService,
-              private router: Router) { }
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params.id;
+    if (this.id !== undefined){
+      this.placeService.getPlaceById(this.id).subscribe(place => this.place = place);
+    }
   }
 
   addPlace(): void{
-    this.placeService
-      .savePlace(this.place.name, this.place.country, this.place.city, this.place.street, this.place.number)
-      .subscribe(() => {
-        this.router
-          .navigate(['admin']);
-    });
+    if (this.id !== undefined){
+      this.placeService
+        .updatePlace(this.place, this.id)
+        .subscribe(() => {
+          this.router.navigate(['places']);
+      });
+    }
+    else{
+      this.placeService
+        .savePlace(this.place.name, this.place.country, this.place.city, this.place.street, this.place.number)
+        .subscribe(() => {
+          this.router
+            .navigate(['admin']);
+        });
+    }
   }
 
 }

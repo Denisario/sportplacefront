@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {Place} from '../models/Place';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class PlaceService {
       .get<string[]>('http://localhost:8080/rest/api/v1/places/names');
   }
 
-  savePlace(name: string, country: string, city: string, street: string, placeNum: string): Observable<any>{
+  savePlace(name: string, country: string, city: string, street: string, placeNum: number): Observable<any>{
     return this.httpClient
       .post('http://localhost:8080/rest/api/v1/places', {name, country, city, street, placeNum})
       .pipe();
@@ -29,5 +30,25 @@ export class PlaceService {
     return this.httpClient
       .get<string[]>(`http://localhost:8080/rest/api/v1/places/placeNames?countryName=${countryName}`)
       .pipe();
+  }
+
+  getAllPlaces(): Observable<Place[]>{
+    return this.httpClient
+      .get<Place[]>(`http://localhost:8080/rest/api/v1/places`);
+  }
+
+  getPlaceById(id: number): Observable<Place>{
+    return this.httpClient
+      .get<Place>(`http://localhost:8080/rest/api/v1/places/${id}`);
+  }
+
+  deletePlace(id: number): Observable<any>{
+    return this.httpClient
+      .delete(`http://localhost:8080/rest/api/v1/places/${id}`);
+  }
+
+  updatePlace(place: Place, id: number): Observable<any>{
+    return this.httpClient
+      .put(`http://localhost:8080/rest/api/v1/places/${id}`, place);
   }
 }

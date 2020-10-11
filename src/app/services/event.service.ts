@@ -8,7 +8,6 @@ import {BehaviorSubject, Observable} from 'rxjs';
 export class EventService {
   events: BehaviorSubject<Event[]> = new BehaviorSubject<Event[]>(null);
 
-
   constructor(private httpClient: HttpClient) { }
 
   getAllEvents(page: number, eventsInPage: number): Observable<Event[]>{

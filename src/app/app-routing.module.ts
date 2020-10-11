@@ -10,6 +10,7 @@ import {AddEventComponent} from './components/add-event/add-event.component';
 import {AddPlaceComponent} from './components/add-place/add-place.component';
 import {AdminComponent} from './components/admin/admin.component';
 import {FindComponent} from './components/find/find.component';
+import {PlacesListComponent} from './components/places-list/places-list.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,9 @@ const routes: Routes = [
   {path: 'addEvent', component: AddEventComponent},
   {path: 'addPlace', component: AddPlaceComponent},
   {path: 'admin', component: AdminComponent},
-  {path: 'find', component: FindComponent}
+  {path: 'find', component: FindComponent},
+  {path: 'places', component: PlacesListComponent},
+  {path: 'updatePlace/:id', component: AddPlaceComponent}
 ];
 
 @NgModule({

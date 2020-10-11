@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
+    <div class="col-12" *ngIf="place">
       <form (ngSubmit)="addPlace()">
         <div class="form-group">
           <label for="name">Place name</label>

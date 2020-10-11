@@ -22,6 +22,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { FindComponent } from './components/find/find.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
+import { PlacesListComponent } from './components/places-list/places-list.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {MatIconModule} from '@angular/material/icon';
     AdminComponent,
     AddEventComponent,
     AddPlaceComponent,
-    FindComponent
+    FindComponent,
+    PlacesListComponent
   ],
   imports: [
     BrowserModule,
