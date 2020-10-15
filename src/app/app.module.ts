@@ -8,7 +8,7 @@ import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { EventsComponent } from './components/events/events.component';
 import { EventComponent } from './components/event/event.component';
 import { LogoutComponent } from './components/logout/logout.component';
@@ -24,6 +24,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import { PlacesListComponent } from './components/places-list/places-list.component';
 import { EventListComponent } from './components/event-list/event-list.component';
+import {HttpIntercepterBasicAuthService} from './services/http-intercepter-basic-auth-service.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,9 @@ import { EventListComponent } from './components/event-list/event-list.component
     MatSidenavModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
